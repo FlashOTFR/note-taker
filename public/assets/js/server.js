@@ -1,36 +1,20 @@
 const express = require('express');
-const fs = require('fs');
-const util = require('util');
+const lib = require('./routes')
 const path = require('path');
 
+
+//setup
 
 const app = express();
 const PORT = 8080;
 
-//routes
-
-app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, 'notes.html')));
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//listener
+//Listener
 
 app.listen(PORT, () => console.log('App listening on PORT ' + PORT));
