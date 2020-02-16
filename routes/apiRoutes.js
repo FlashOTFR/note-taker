@@ -36,5 +36,9 @@ module.exports = app => {
         let notes = '';
         notes = dbData.filter(function(check){return check.id !== id});
         console.log(notes);
+        fs.writeFile(path.join(__dirname, '../db/db.json'),JSON.stringify(notes), err => {
+            if (err) throw err;
+        });
+        res.JSON(notes);
     })
 }
