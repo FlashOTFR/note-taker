@@ -31,5 +31,10 @@ module.exports = app => {
 
     // Delete command
 
-    app.delete
+    app.delete('/api/notes/:id', (req, res) => {
+        const id = req.params.id;
+        let notes = '';
+        notes = dbData.filter(function(check){return check.id !== id});
+        console.log(notes);
+    })
 }
