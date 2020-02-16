@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const $noteTitle = $('.note-title');
 const $noteText = $('.note-textarea');
